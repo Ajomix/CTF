@@ -67,7 +67,7 @@ int __fastcall main(int a1, char **a2, char **a3)
 .text:0000000000400701 loc_4006E5 endp
 .text: .......
  ```
- - Sau khi đã có CODE chúng ta cần biết xem chỗ hàm này sẽ làm gì với `INPUT` của chúng ta 
+ - Sau khi đã có CODE chúng ta cần kiểm tra xem hàm này sẽ làm gì với `INPUT` của chúng ta 
  - Trước khi chạy hàm `loc_4006E5` chương trình đã đưa `INPUT` vào thanh ghi `RAX` :
  ```assembly
 .text:00000000004006D4 mov     rdx, [rbp+var_20] <---------------- var_20 đang chứa INPUT 
