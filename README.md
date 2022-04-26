@@ -4,10 +4,10 @@
 
 <p>
   
-|NAME|
-| :---: |
-| [Crackmexx](https://github.com/Ajomix/CTF/blob/main/TRAINNING/CRACKMEXX.md) |
-| [AntiDebug](https://github.com/Ajomix/CTF/blob/main/TRAINNING/AntiDebugChall.md) |
+| Name | Type |
+| :---: | :---: |
+| [Crackmexx](https://github.com/Ajomix/CTF/blob/main/TRAINNING/CRACKMEXX.md) |`REV`|
+| [AntiDebug](https://github.com/Ajomix/CTF/blob/main/TRAINNING/AntiDebugChall.md) |`REV`|
 </details>
 
 <details>
@@ -15,7 +15,7 @@
 
 <p>
   
-|NAME|
-| :---: |
-| [Beginner](https://github.com/Ajomix/CTF/blob/main/GOOGLE%20CTF%20202/BeginnerChall.md) |
+| Name | Type |
+| :---: | :---: |
+| [Beginner](https://github.com/Ajomix/CTF/blob/main/GOOGLE%20CTF%20202/BeginnerChall.md) |`REV`|
 </details>
