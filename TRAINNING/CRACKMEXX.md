@@ -21,7 +21,7 @@ int __fastcall main(int a1, char **a2, char **a3)
 }
 
 ```
-- Trước tiên chương trình cần chúng ta cung cấp flag để check `` (a1 <=1 ) `` vì thế trước tiên chúng ta sẽ cung cấp một flag giả để có thể hiểu được luồng chương trình : `./crackmexx fakeflag`
+- Trước tiên chương trình check xem `agrv` của chúng ta có bao nhiêu phần tử  `` (a1 <=1 ) `` vì thế trước tiên chúng ta sẽ cung cấp một flag giả để có thể hiểu được luồng chương trình : `./crackmexx fakeflag`
 - Chúng ta có thể nhận thấy dễ dàng hai vòng `for` lồng nhau như trên đang thực hiện decode khoảng vài hơn 500 byte rồi sử dụng số byte đó như một "shellcode" để thực thi, nên Ý tưởng ở bài này sẽ là bật chức năng `debug` để có thể lấy được toàn bộ đoạn code đã được decode và từ đó chúng ta có thể trace tiếp.
 # Hướng làm bài : 
   - `Debug` để lấy được hàm sẽ thực thi
