@@ -7,3 +7,4 @@
 |NAME|
 | :---: |
 | [Crackmexx](https://github.com/Ajomix/CTF/blob/main/TRAINNING/CRACKMEXX.md) |
+| [AntiDebug](https://github.com/Ajomix/CTF/blob/main/TRAINNING/AntiDebugChall.md) |
