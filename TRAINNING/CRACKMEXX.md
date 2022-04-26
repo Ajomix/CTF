@@ -79,9 +79,9 @@ int __fastcall main(int a1, char **a2, char **a3)
  - Công việc tiếp theo của chúng ta sau đó sẽ là `debug` vì hàm này đã bị anti analysis nên chúng ta chỉ có thế đọc code Assembly và trace xem chương trình `ENCRYPT INPUT` của chúng ta ra sao.
  - Sau một lúc ngồi đọc CODE Asm của hàm này chúng ta thu được cách chương trình encrypt như sau : 
  ```
+ tmp=0x50
  FOR j in (0..1337) {
     FOR i in (0.. len(INPUT)) {
-        tmp=0x50
         INPUT[i]^=tmp
         tmp^=INPUT[i]
     }
