@@ -10,7 +10,7 @@
 | [FlagChecker]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/FlagChecker.exe)
 | [gogo]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/gogogo)
 | [HEA]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/HEA.exe)
-| [SECRET]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/secret.zip)
+| [SECRET](https://github.com/Ajomix/CTF/blob/main/KCSC%202022/secret.md ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/secret.zip)
 | [SIMPLE_BMP]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/Simple_BMP.zip)
 
 </details>
