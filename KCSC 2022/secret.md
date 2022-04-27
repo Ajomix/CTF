@@ -124,7 +124,7 @@ int __stdcall StartAddress()
 	..............
 ```
 - Có rất nhiều hàm nên mình sẽ chỉ phân tích một số hàm quan trọng .
-- Đầu tiên chương trình sẽ đọc `StdOut` của `pipe` vừa tạo lức trước , hiểu đơn giản là màn hình console của process được tạo ra trước đó hiện cái gì thì chương trình sẽ đọc tất : 
+- Đầu tiên chương trình sẽ đọc `StdOut` của `pipe` vừa tạo lúc trước , hiểu đơn giản là màn hình console của process được tạo ra trước đó hiện cái gì thì chương trình sẽ đọc tất : 
 
 ```C 
 	........
