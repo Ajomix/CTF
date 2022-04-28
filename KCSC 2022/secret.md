@@ -180,7 +180,7 @@ _DWORD *__usercall sub_8E14F5@<eax>(signed int number_of_byte@<edx>, const void 
   }
   while ( i < 16 );
 ```
-- Đoạn đầu của hàm sử dụng hàm `random` để tạo ra 32 byte đầu bất kì , sau khi trace vào các hàm bên dưới thì mình thấy có một vùng data chương trình sử dụng để trộn với `reader` và `36 byte đầu` kia và những byte đó hoàn toàn giống với `Rijndael S-box` ([S-box](https://en.wikipedia.org/wiki/Rijndael_S-box))
+- Đoạn đầu của hàm sử dụng hàm `random` để tạo ra 32 byte đầu bất kì , sau khi trace vào các hàm bên dưới thì mình thấy có một vùng data chương trình sử dụng để trộn với `reader` và `32 byte đầu` kia và những byte đó hoàn toàn giống với `Rijndael S-box` ([S-box](https://en.wikipedia.org/wiki/Rijndael_S-box))
 - Nên mình kết luận luôn đây là hàm Encrypt sử dụng `AES` với `Key` và `IV` sẽ là 32 byte random kia.
 ## Decrypt Data
 - Đề bài còn cho chúng ta một file `pcap` để xem những data đã gửi đi nên chúng ta sẽ lấy chúng ra để decrypt 
