@@ -184,7 +184,7 @@ _DWORD *__usercall sub_8E14F5@<eax>(signed int number_of_byte@<edx>, const void 
 - Nên mình kết luận luôn đây là hàm Encrypt sử dụng `AES` với `Key` và `IV` sẽ là 32 byte random kia.
 ## Decrypt Data
 - Đề bài còn cho chúng ta một file `pcap` để xem những data đã gửi đi nên chúng ta sẽ lấy chúng ra để decrypt 
-- Key và IV sẽ là 32 byte đầu 
+- Key và IV sẽ là `32 byte đầu`
 - Do lúc socket gửi đi , nó có gửi cả `KEY` và `IV` nên chúng ta có thể lấy được nó thông qua file `pcap`
 - script mình hack được từ anh tác giả : 
 ```python 
