@@ -107,7 +107,7 @@ EndFunc    ; -> checker
   - Công việc còn lại là đọc shellcode thật trâu :3 
   ## Tóm tắt shellcode : 
   - Load các hàm CryptoAPI 
-  `
+  ```C
     declare aHttpsWwwYoutub = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 	declare hProv;
 	CryptAcquireContextA(&hProv,0,0,PROV_RSA_FULL,0)
@@ -131,7 +131,7 @@ EndFunc    ; -> checker
 	newspace[i...end] = input[i..end]
 	len2 = strlen(newspace)
 	CryptEncrypt(phKey,0,1,0,newspace,len1,len2)
-   `
+   ```
    - Shellcode sử dụng thuật toán `RC4` để Encrypt và so sánh với số byte đã có sẵn.
    - Để tăng độ chính xác mình đã viết trực tiếp hàm decrypt bằng CryptoAPI như của tác giả đã sử dụng :
    ```C 
