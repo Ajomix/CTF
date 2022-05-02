@@ -7,7 +7,7 @@
   
 | Name | Type | Link Chall
 | :---: | :---: | :---: |
-| [FlagChecker]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/FlagChecker.exe)
+| [FlagChecker](https://github.com/Ajomix/CTF/blob/main/KCSC%202022/flagchecker.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/FlagChecker.exe)
 | [gogo]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/gogogo)
 | [HEA](https://github.com/Ajomix/CTF/blob/main/KCSC%202022/hea.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/HEA.exe)
 | [SECRET](https://github.com/Ajomix/CTF/blob/main/KCSC%202022/secret.md ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/secret.zip)
