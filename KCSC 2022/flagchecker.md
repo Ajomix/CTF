@@ -132,10 +132,10 @@ EndFunc    ; -> checker
 	len2 = strlen(newspace)
 	CryptEncrypt(phKey,0,1,0,newspace,len1,len2)
    ```
-   - Shellcode sử dụng thuật toán `RC4` để Encrypt và so sánh với số byte đã có sẵn.
+   - Shellcode sử dụng thuật toán `RC4` với `key` là cái link youtube kia để Encrypt và so sánh với số byte đã có sẵn.
    - Để tăng độ chính xác mình đã viết trực tiếp hàm decrypt bằng CryptoAPI như của tác giả đã sử dụng :
    ```C 
-   #pragma comment(lib, "crypt32.lib")
+#pragma comment(lib, "crypt32.lib")
 
 #include <stdio.h>
 #include <tchar.h>
@@ -190,6 +190,8 @@ int main(void)
     }
     return 1;
 }
+
+ 
 
  ```
  
