@@ -165,7 +165,7 @@ int main(void)
     BYTE text[] = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
     if (CryptHashData(phHash, text,strlen((const char*)text), 0)) {
-        fprintf(stdout, "Success CryptHashData\n PassWord : %s ,\n Length : %d",text, strlen((const char*)text));
+        fprintf(stdout, "Success CryptHashData\n PassWord : %s ,\n Length : %d\n",text, strlen((const char*)text));
     };
     HCRYPTKEY phKey;
     if (CryptDeriveKey(hProv, CALG_RC4, phHash, 0, &phKey)) {
