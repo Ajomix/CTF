@@ -40,9 +40,9 @@ int main()
 		*((__int64*)(buf + index * 16) + 1) = buf_1;
 		index--;
 	}
-	for (int i = 0; i < 80; i++) {
-		printf("%c", buf[i]);
-	}
+	
+	printf("%s", buf);
+	
 	return 0;
 }
 ```
