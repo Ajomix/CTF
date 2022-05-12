@@ -11,7 +11,7 @@
 | [gogo]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/gogogo)
 | [HEA](https://github.com/Ajomix/CTF/blob/main/KCSC%202022/hea.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/HEA.exe)
 | [SECRET](https://github.com/Ajomix/CTF/blob/main/KCSC%202022/secret.md ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/secret.zip)
-| [SIMPLE_BMP]( ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/Simple_BMP.zip)
+| [SIMPLE_BMP]( https://github.com/Ajomix/CTF/blob/main/KCSC%202022/Simple_BMP.md ) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/raw/main/ALL%20CHALL/Simple_BMP.zip)
 
 </details>
 
