@@ -15,20 +15,20 @@ unsigned char buf[] =
 };
 int main()
 {
-	unsigned __int64 buf_1;
-	unsigned __int64 buf_0;
-	__int64 v13=0;
+	unsigned long long buf_1;
+	unsigned long long buf_0;
+	long long v13=0;
 	
 
 	for (int i = 0; i < 32; i++) {
 		v13 += 0x123457898765432;
 	}
-	__int64 sample = v13;
-	__int64 index = 4;
+	long long sample = v13;
+	long long index = 4;
 
 	for (int i = 0; i < 5; i++) {
-		buf_0 = *((__int64*)(buf + index * 16));
-		buf_1 = *((__int64*)(buf + index * 16)+1);
+		buf_0 = *((long long*)(buf + index * 16));
+		buf_1 = *((long long*)(buf + index * 16) + 1);
 		
 		v13 = sample;
 		for (int j = 0; j < 32; j++) {
@@ -36,8 +36,8 @@ int main()
 			buf_0 -= (v13 + buf_1) ^ (16 * buf_1 - 0x1EC32D622D0480D8) ^ ((buf_1 >> 5) + 0x488D27F32AE91451);
 			v13 -= 0x123457898765432;
 		}
-		*((__int64*)(buf + index * 16)) = buf_0;
-		*((__int64*)(buf + index * 16) + 1) = buf_1;
+		*((long long*)(buf + index * 16)) = buf_0;
+		*((long long*)(buf + index * 16) + 1) = buf_1;
 		index--;
 	}
 	
