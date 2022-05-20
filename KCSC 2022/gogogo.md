@@ -207,7 +207,7 @@ tmp2=sym1+sym2
 s.add(tmp2==sample1)
 s.add(rs==sample2)
 
-if s.check():
+if s.check() == sat:
     m = s.model()
     for i in range(16):
         print(chr(m[part1[i]].as_long()),end='')
