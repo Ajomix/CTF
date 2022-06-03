@@ -1,3 +1,5 @@
+- Bài này tương tự thuật toán [TEA](https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm) nhưng thay đổi các hằng số 
+
 ```C
 #include <stdio.h>
 #include <string.h>
