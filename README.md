@@ -6,7 +6,7 @@
   
 | Name | Type | Link Chall
 | :---: | :---: | :---: |
-| [Encryptor]( ) |`REV`|[DOWNLOAD]( )
+| [Encryptor](https://github.com/Ajomix/CTF/blob/main/KMACTF2022/Encryptor.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/Encryptor.zip)
 </details>
 
 <details>
