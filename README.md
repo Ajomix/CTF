@@ -1,4 +1,13 @@
 # CTF NOTE AND WRITEUP
+<details>
+<summary>KMACTF2022</summary>
+
+<p>
+  
+| Name | Type | Link Chall
+| :---: | :---: | :---: |
+| [Encryptor]( ) |`REV`|[DOWNLOAD]( )
+</details>
 
 <details>
 <summary>KCSC CTF 2022 </summary>
