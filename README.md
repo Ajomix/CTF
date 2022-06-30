@@ -7,6 +7,7 @@
 | Name | Type | Link Chall
 | :---: | :---: | :---: |
 | [Encryptor](https://github.com/Ajomix/CTF/blob/main/KMACTF2022/Encryptor.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/Encryptor.zip)
+| [NikoGoKill](https://github.com/Ajomix/CTF/blob/main/KMACTF2022/NikoGoKill.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/nikoGoKill.apk)
 </details>
 
 <details>
