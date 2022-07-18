@@ -118,7 +118,7 @@ func main() {
 			simulator.RegWrite(uc.ARM64_REG_X0, uint64(HEAP_BASE))
 			simulator.Start(start_address, end_address)
 			ret_meatbox, _ := simulator.RegRead(uc.ARM64_REG_Q0)
-			ret_meatbox = ret_meatbox & 0xff
+			ret_meatbox &= 0xff
 
 			if ret_meatbox == uint64(asc_box[i]) {
 
@@ -128,7 +128,7 @@ func main() {
 				simulator.RegWrite(uc.ARM64_REG_X0, uint64(HEAP_BASE))
 				simulator.Start(start_address, end_address)
 				ret_soulbox, _ := simulator.RegRead(uc.ARM64_REG_Q0)
-				ret_soulbox = ret_soulbox & 0xff
+				ret_soulbox &= 0xff
 
 				if ret_soulbox == uint64(asc_box[i+1]) {
 					//fmt.Printf("Candicate godbox :%c\n", input)
