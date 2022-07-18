@@ -216,7 +216,16 @@ def hook_code_godbox(simulator, address, size, user_data):
     if address == module_base + 0x351C:#bypass .malloc
         simulator.reg_write(UC_ARM64_REG_PC,address+size)
     pass
-
+def add_hook(simulator):
+    start_address = module_base + 0x1708
+    end_address = module_base + 0x1ADC
+    simulator.hook_add(UC_HOOK_CODE, hook_code_meatbox, start_address, end_address)
+    start_address = module_base + 0x2428
+    end_address = module_base + 0x27FC
+    simulator.hook_add(UC_HOOK_CODE, hook_code_soulbox, start_address, end_address)
+    start_address = module_base + 0x314C
+    end_address = module_base + 0x3524
+    simulator.hook_add(UC_HOOK_CODE, hook_code_godbox, start_address, end_address)
 try:
    
     asc_box = [7, 24, 16, 15, 28, 18, 5, 10, 7, 11, 2, 15, 18, 6, 8, 19, 10, 7, 5, 9, 11, 6, 15, 15, 17, 4, 19, 19, 1, 14, 3, 11, 0, 1, 1, 9, 9, 2, 8, 19, 1, 14, 1, 1, 12, 9, 5, 16, 1, 18, 10, 8, 11, 18, 17, 4, 19, 1, 1, 12, 19, 1, 14, 18, 0, 14, 8, 11, 18, 1, 15, 11, 3, 11, 0, 1, 1, 12, 7, 5, 4, 8, 11, 18, 8, 24, 15, 8, 24, 15, 14, 28, 15, 1, 18, 10, 16, 21, 17, 1, 1, 12, 6, 22, 10, 8, 11, 18, 17, 4, 19, 1, 18, 10, 1, 1, 12, 14, 28, 15, 1, 18, 10, 1, 1, 12, 3, 11, 0, 9, 2, 8, 4, 13, 16, 1, 1, 12, 6, 22, 10, 4, 13, 16, 4, 13, 16, 17, 15, 5, 7, 23, 2]
@@ -233,6 +242,7 @@ try:
         simulator.reg_write(UC_ARM64_REG_SP, BASE_STACK + STACK_SIZE - 1)
 
         counter = 0
+        add_hook(simulator)
         for iiii in range(0,len(asc_box),3):
             for input in range(0x20,0x7f+1):
                 #meat_box
@@ -240,35 +250,29 @@ try:
                 simulator.reg_write(UC_ARM64_REG_X0,BASE_HEAP)
                 start_address = module_base + 0x1708
                 end_address = module_base + 0x1ADC
-                simulator.hook_add(UC_HOOK_CODE, hook_code_meatbox, start_address, end_address)
                 simulator.emu_start(start_address,end_address)
-
                 ret_meatbox = simulator.reg_read(UC_ARM64_REG_Q0)&0xff
 
                 if ret_meatbox == asc_box[iiii]:
-                    print("candicate meatbox: %c"%input)
+                    #print("candicate meatbox: %c"%input)
                     #soul_box
-                    simulator.mem_write(BASE_HEAP,input.to_bytes(1, 'little'))
                     simulator.reg_write(UC_ARM64_REG_X0,BASE_HEAP)
                     start_address = module_base + 0x2428
                     end_address = module_base + 0x27FC
-                    simulator.hook_add(UC_HOOK_CODE, hook_code_soulbox, start_address, end_address)
                     simulator.emu_start(start_address,end_address)
 
                     ret_soulbox = simulator.reg_read(UC_ARM64_REG_Q0)&0xff
                     if ret_soulbox == asc_box[iiii+1]:
-                        print("candicate soulbox: %c"%input)
+                        #print("candicate soulbox: %c"%input)
                         #godbox 
-                        simulator.mem_write(BASE_HEAP,input.to_bytes(1, 'little'))
                         simulator.reg_write(UC_ARM64_REG_X0,BASE_HEAP)
                         start_address = module_base + 0x314C
                         end_address = module_base + 0x3524
-                        simulator.hook_add(UC_HOOK_CODE, hook_code_godbox, start_address, end_address)
                         simulator.emu_start(start_address,end_address)
 
                         ret_godbox = simulator.reg_read(UC_ARM64_REG_Q0)&0xff
                         if ret_godbox == asc_box[iiii+2]:
-                            print("result : %c"%input)
+                            #print("result : %c"%input)
                             counter += 1 
                             BASE_HEAP += 1
                             input=0x7f+2
@@ -278,6 +282,7 @@ try:
         print(flag)
 except UcError as e :
     print("Error {}".format(e))
+
 
     #LINECTF{watcha_kn0w_ab0ut_r0ll1ng_d0wn_1n_th3_d33p}
 
