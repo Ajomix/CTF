@@ -254,7 +254,7 @@ try:
                 ret_meatbox = simulator.reg_read(UC_ARM64_REG_Q0)&0xff
 
                 if ret_meatbox == asc_box[iiii]:
-                    #print("candicate meatbox: %c"%input)
+                    #print("candidate meatbox: %c"%input)
                     #soul_box
                     simulator.reg_write(UC_ARM64_REG_X0,BASE_HEAP)
                     start_address = module_base + 0x2428
@@ -263,7 +263,7 @@ try:
 
                     ret_soulbox = simulator.reg_read(UC_ARM64_REG_Q0)&0xff
                     if ret_soulbox == asc_box[iiii+1]:
-                        #print("candicate soulbox: %c"%input)
+                        #print("candidate soulbox: %c"%input)
                         #godbox 
                         simulator.reg_write(UC_ARM64_REG_X0,BASE_HEAP)
                         start_address = module_base + 0x314C
@@ -289,6 +289,4 @@ except UcError as e :
 ```
 - Kết quả : 
 
-![image](https://user-images.githubusercontent.com/57254763/179476137-5971496b-d6da-4fd2-aff5-aef196ab22a9.png)
-
-
+![image](https://user-images.githubusercontent.com/57254763/179653760-9fc265d9-6ba1-471a-8632-a8df2ebf61a8.png)
