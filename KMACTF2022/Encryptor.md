@@ -151,6 +151,7 @@ Chúng ta nhập vào chữ `abcd` hay nói cách khác `start_of_buf[] = "abcd"
   + Tiếp theo `shifter = 6`:
   
   	![image](https://user-images.githubusercontent.com/57254763/182188688-cd5550cb-7027-4eac-9fcc-63f7b5f38a9f.png)	
+ 
  ..........
  TÓM LẠI LÀ NÓ SẼ LẤY TỪNG 6 BIT RA MỘT ĐỂ NÓ ENCRYPT , VẬY NÊN CHÚNG TA SẼ BRUTEFORCE............
 
