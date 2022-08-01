@@ -138,7 +138,7 @@ Chúng ta nhập vào chữ `abcd` hay nói cách khác `start_of_buf[] = "abcd"
 , Và nó liên tục shift xuống theo giá trị `0 2 4 6` , sau đó nó lại được   `AND 0x3F` , phép `AND` ở đây là phép toán để mask bit , khi đổi 0x3f sang số hệ 2 thì mình thấy nó là `0b111111`, vậy kết luận đoạn ` ((v4 >> shifter) & 0x3F)`là nó sẽ shift xuống `0 2 4 6` bit , tiếp đến nó AND với 0x3f hay nói cách khác đoạn AND này là nó sẽ lấy 6 bit của cái đống đã shift xuống kia thôi. Tiếp đến nó cộng với `rand()%2` , đoạn `rand()%2` này nói cách khác nó sẽ chỉ là 0 hoặc 1. Nghe đến đây thuật toán encrypt có vẻ khá là phức tạp , nhưng đến đây công việc rất đơn giản là các bạn chỉ cần brute force thôi , tại sao mình lại nghĩ đến cách này vì khi đọc đến đoạn `rand()%2` mình thấy không có cách nào có thể lấy lại được giá trị `rand%2` này để reverse lại kết quả được. 
 - Vậy bruteforce như thế nào?
 - Sau những công việc phân tích trên , các bạn có để ý đến đoạn mình nói phép `AND` **CHỈ LẤY 6 BIT CỦA ĐỐNG SHIFTER** , Vậy tại sao chúng ta không thử hết giá trị từ 0 cho đến max của 6 bit đó ? , và khi cộng với phép `rand()%2` chúng ta lại tiếp tục thử vì giá trị của nó chỉ có thể là 0 hoặc 1 thôi. 
-- Tóm lại công thức brute ở đây sẽ là `2*i + m` với `i` chạy từ 0 cho đế kịch kim 6 bit ( kịch kim 6 bit sẽ là từ `0 cho đến 0x3f` ), và `m` sẽ là 0 hoặc 1 , nếu thử encrypt xong mà nó bằng cipher đã encrypted thì chúng ta sẽ lấy giá trị đó, dưới đây là script viết bằng go của mình.
+- Tóm lại công thức brute ở đây sẽ là `2*j + m` với `j` chạy từ 0 cho đế kịch kim 6 bit ( kịch kim 6 bit sẽ là từ `0 cho đến 0x3f` ), và `m` sẽ là 0 hoặc 1 , nếu thử encrypt xong mà nó bằng cipher đã encrypted thì chúng ta sẽ lấy giá trị `j` đó, dưới đây là script viết bằng go của mình.
 
 
 ```go
