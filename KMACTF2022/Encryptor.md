@@ -137,21 +137,52 @@ Chúng ta nhập vào chữ `abcd` hay nói cách khác `start_of_buf[] = "abcd"
 - Ngay bây giờ chúng ta đã thấy `shifter` và `rand()` đã được sử dụng , shifter chỉ là các giá trị `0 2 4 6` , mà `v4` lại là giá trị được nhồi nhét `input` bên trong, 
 , Và nó liên tục shift xuống theo giá trị `0 2 4 6` , sau đó nó lại được   `AND 0x3F` , phép `AND` ở đây là phép toán để mask bit , khi đổi 0x3f sang số hệ 2 thì mình thấy nó là `0b111111`, vậy kết luận đoạn ` ((v4 >> shifter) & 0x3F)`là nó sẽ shift xuống `0 2 4 6` bit , tiếp đến nó AND với 0x3f hay nói cách khác đoạn AND này là nó sẽ lấy 6 bit của cái đống đã shift xuống kia thôi. Tiếp đến nó cộng với `rand()%2` , đoạn `rand()%2` này nói cách khác nó sẽ chỉ là 0 hoặc 1. Nghe đến đây thuật toán encrypt có vẻ khá là phức tạp , nhưng đến đây công việc rất đơn giản là các bạn chỉ cần brute force thôi , tại sao mình lại nghĩ đến cách này vì khi đọc đến đoạn `rand()%2` mình thấy không có cách nào có thể lấy lại được giá trị `rand%2` này để reverse lại kết quả được. 
 - Tổng kết thuật toán Encrypt như sau : (Mình sẽ thực hiện lại từng bước 1 của thuật toán encrypt này)
-  + Giả sử như mình đang có `v4 = 0x61626364`  
-  + Đổi nó sang bit thì `v4 = 01100001011000100110001101100100`
-  + Đầu tiên chúng ta có `shifter = 2`.
-  + Vậy  `(v4 >> shifter) & 0x3f  + rand()%2 = 0b011001 + 0 hoặc 1`
+  + Giả sử như mình có file fake_flag và bên trong là `abcdaaaa...`
+  + Những giá trị cần để ý : `v4 - shifter - Và kết quả của công thức`
+  + Khởi tạo : `v4 = 0 , shifter = -6`
+  + Sau khi sử dụng công thức "nhồi nhét input" :
+  ```C
+  .....
+   if ( *buf != end_of_buf )
+   {
+    shifter = -6;
+    do
+    {
+      v4 = *start_of_buf + (v4 << 8); // Nhét input 
+      shifter += 8;
+      if ( shifter >= 0 )
+      {
+        do
+        {
+          v13[0] = 2 * ((v4 >> shifter) & 0x3F) + rand() % 2; // Công thức
+          sub_7C1D2D(space, v13);
+          shifter -= 6;
+	  }while ( shifter >= 0 );
+        end_of_buf = v10;
+      }
+      start_of_buf = v12 + 1;
+      v12 = start_of_buf;
+    }
+    while ( start_of_buf != end_of_buf );
+  ```
+  + chúng ta được `v4 = 0x61` (chữ 'a') chuyển về hệ số 2 , `v4 = 01100001`:
   
-  	![image](https://user-images.githubusercontent.com/57254763/182188021-101521c9-455a-4929-8bb9-9a5927b18196.png)
-										 	 
-  + Tiếp theo `shifter = 4`:
- 
-  	![image](https://user-images.githubusercontent.com/57254763/182188302-60ae1413-98d6-4947-bc63-50b0381ebc05.png)	
+ 	![image](https://user-images.githubusercontent.com/57254763/182294711-0b8c6607-f051-4918-94d3-c35f2cf0a11f.png)
 	
-  + Tiếp theo `shifter = 6`:
+  + Sau đó `shifter += 8 và sẽ nhận giá trị là 2 ` , vậy mô phỏng ở nháp nó sẽ như này :
   
-  	![image](https://user-images.githubusercontent.com/57254763/182188688-cd5550cb-7027-4eac-9fcc-63f7b5f38a9f.png)	
+  	![image](https://user-images.githubusercontent.com/57254763/182295466-57444f2d-c95e-4580-aea5-f40c27dec8d3.png)
+
+  + Vậy là nó sẽ lấy 6 bit ra để encrypt và để lại 2 bit chưa encrypt , Tiếp theo ` shifter-=6 và lúc này shifter = -4`, bên dưới sẽ là các bước lặt vặt , các bạn đọc kĩ thì thấy nó chỉ là bước tăng con trỏ đến chữ tiếp theo của input,tiếp tục lặp lại bên trên và `start_of_buf` tiêp theo sẽ là chữ 'b' (0x62), tiếp tục là sử dụng công thức nhét input `v4 = *start_of_buf + (v4 << 8);` , lúc này `v4 sẽ là 0x6162` , đổi sang hệ số 2 nó thành : 
+  
  
+       ![image](https://user-images.githubusercontent.com/57254763/182296238-37a6f2c9-c6ff-481d-841f-3af67834d6d6.png)
+  
+   + `shifter += 8 nên nó sẽ là shifter = 4` , Sử dụng công thức encrypt thì nó lấy :
+     ![image](https://user-images.githubusercontent.com/57254763/182296485-9d789f3b-713a-423d-adbc-0ab054e94d34.png)
+
+   + Các bạn có thể thấy nó đã lấy 2 bit chưa encrypt để encrypt tiếp cùng 4 bit tiếp theo của chữ 'b' . Nếu cứ tiếp tục như vậy , bạn sẽ thấy nó lấy liên tục từng 6 bit một ra để nó encrypt với chỗ `rand()%2`.
+
  ..........
  TÓM LẠI LÀ NÓ SẼ LẤY TỪNG 6 BIT RA MỘT ĐỂ NÓ ENCRYPT , VẬY NÊN CHÚNG TA SẼ BRUTEFORCE............
 
