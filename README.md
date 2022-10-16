@@ -1,5 +1,16 @@
 # CTF NOTE AND WRITEUP
 <details>
+<summary>ASCIS 2022 QUALS</summary>
+
+<p>
+  
+| Name | Type | Link Chall
+| :---: | :---: | :---: |
+| [Coconut](https://github.com/Ajomix/CTF/blob/main/ASCIS/coconut.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/Coconut.exe)
+| [Dummy](https://github.com/Ajomix/CTF/blob/main/ASCIS/dummy.md) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/DummyOS.bin)
+</details>
+
+<details>
 <summary>LINECTF2022</summary>
 
 <p>
