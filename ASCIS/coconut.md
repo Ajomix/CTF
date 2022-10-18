@@ -44,15 +44,15 @@ Tiếp sau đó hàm `coconut_28`:
 ...
 result = (string)Coconut.coconut_25(e, new object[0], Coconut.meat_28, Coconut.water_28);
 ```
-- 
+- `Coconut25` resolve Metadata Token từ Exception
 ```c#
 
 // Token: 0x06000003 RID: 3 RVA: 0x000025E4 File Offset: 0x000007E4
 		public static object coconut_25(InvalidProgramException e, object[] args, Dictionary<uint, int> m, byte[] b)
 		{
-			int metadataToken = new StackTrace(e).GetFrame(0).GetMethod().MetadataToken;
+			int metadataToken = new StackTrace(e).GetFrame(0).GetMethod().MetadataToken; // Get Last Error
 			Module module = typeof(Program).Module;
-			MethodInfo methodInfo = (MethodInfo)module.ResolveMethod(metadataToken);
+			MethodInfo methodInfo = (MethodInfo)module.ResolveMethod(metadataToken); // Resolve
 			MethodBase methodBase = module.ResolveMethod(metadataToken);
 			ParameterInfo[] parameters = methodInfo.GetParameters();
 			Type[] array = new Type[parameters.Length];
@@ -109,4 +109,4 @@ result = (string)Coconut.coconut_25(e, new object[0], Coconut.meat_28, Coconut.w
 			return dynamicMethod.Invoke(null, args);
 		}
 ```
-
+- 
