@@ -6,6 +6,17 @@
   
 | Name | Type | Link Chall
 | :---: | :---: | :---: |
+| [The return of Anti Debug](https://hackmd.io/@AWXkSundSBCbyTFFTFC98Q/BkhkukU_o#The-return-of-Anti-Debug) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/antidebug.zip)
+ 
+</details>
+
+<details>
+<summary>VCS</summary>
+
+<p>
+  
+| Name | Type | Link Chall
+| :---: | :---: | :---: |
 | [antidebug1](https://hackmd.io/@AWXkSundSBCbyTFFTFC98Q/ryaDxt-wi) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/anti_debug1.exe)
  
 </details>
