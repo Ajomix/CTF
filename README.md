@@ -1,6 +1,6 @@
 # CTF NOTE AND WRITEUP
 <details>
-<summary>VCS</summary>
+<summary>WannaGame2022</summary>
 
 <p>
   
