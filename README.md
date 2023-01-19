@@ -18,7 +18,7 @@
 | Name | Type | Link Chall
 | :---: | :---: | :---: |
 | [antidebug1](https://hackmd.io/@AWXkSundSBCbyTFFTFC98Q/ryaDxt-wi) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/anti_debug1.exe)
- 
+| [antidebug2](https://hackmd.io/@AWXkSundSBCbyTFFTFC98Q/rkN0ktSjo) |`REV`|[DOWNLOAD](https://github.com/Ajomix/CTF/blob/main/ALL%20CHALL/anti_debug2.exe)
 </details>
 
 
